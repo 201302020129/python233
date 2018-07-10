@@ -1,2 +1,3 @@
 # -*- coding: utf-8 -*-
-print('Congratulations on running this script!!')
+x = 'Congratulations on running this script!!'
+print(x)
