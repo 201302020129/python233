@@ -25,15 +25,7 @@ print(
     	)
     )
 
-	#拆分列表
-"""from_phone_list = dict(zip(from_phone,call_time))
-#合并呼出电话与通话时间为新字典
-to_phone_list = dict(zip(to_phone,call_time))
-#合并呼入电话与通话时间为新字典
-phone_list = phone_list.update(from_phone_list)
-phone_list = phone_list.update(to_phone_list)
-print(phone_list)
-
+"""
 任务2: 哪个电话号码的通话总时间最长? 不要忘记，用于接听电话的时间也是通话时间的一部分。
 输出信息:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during

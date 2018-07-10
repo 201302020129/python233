@@ -3,7 +3,7 @@
 你将在以后的课程中了解更多有关读取文件的知识。
 """
 import csv
-
+import math
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
@@ -11,6 +11,32 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
+bjle_called = {}
+called_phones = []
+num_x = 0
+num_y = 0
+for line in calls:
+	if "(080)" in line[0]:
+		if "(" in line[1]:
+			x = str(line[1])
+			y = x.split(")")
+			z = str(y[0] + ")")
+			called_phones.append(z)
+		elif " " in line[1]:
+			x = str(line[1])
+			y = x.split(" ")
+			called_phones.append(y[0])
+nore_called_phones = list(set(called_phones))
+nore_called_phones = sorted(nore_called_phones)
+print("The numbers called by people in Bangalore have codes:")
+for numbers in nore_called_phones:
+    print(numbers)
+for line in calls:
+	if "(080)" in line[0]:
+		num_x += 1
+		if "(080)" in line[1]:
+			num_y += 1
+print("{} percent of calls from fixed lines in Bangalore are callsto other fixed lines in Bangalore.".format(round(float(num_y / num_x) * 100,2)))
 
 """
 任务3:

@@ -11,6 +11,18 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
+seller_nums = []
+test_nums = []
+for line in calls:
+	test_nums.append(line[1])
+for line in calls:
+	if line[0] not in test_nums and line[0] not in texts:
+		seller_nums.append(line[0])
+nore_seller_nums = list(set(seller_nums))
+nore_seller_nums = sorted(nore_seller_nums)
+print("These numbers could be telemarketers: ")
+for num in nore_seller_nums:
+	print(num)
 
 """
 任务4:
